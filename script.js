@@ -16,6 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       category.charAt(0).toUpperCase() + category.slice(1)
     }`;
 
+    document.getElementById("loading").style.display = "block";
+
     fetch(apiUrl, {
       method: "GET",
       headers: {
@@ -47,7 +49,6 @@ document.addEventListener("DOMContentLoaded", () => {
           cursoCell.textContent = entry.course;
           row.appendChild(cursoCell);
 
-          // Adiciona a coluna "Projeto" apenas para expositores
           if (category === "expositores") {
             const projetoCell = document.createElement("td");
             projetoCell.textContent = entry.name_project;
@@ -57,12 +58,18 @@ document.addEventListener("DOMContentLoaded", () => {
           tableBody.appendChild(row);
         });
 
-        // Exibe a coluna "Projeto" apenas para expositores
         if (category === "expositores") {
           document.getElementById("project-header").style.display =
             "table-cell";
         }
+
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("ranking-table").style.display = "table";
       })
-      .catch((error) => console.error("Error fetching data:", error));
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        document.getElementById("loading").textContent =
+          "Erro ao carregar os dados.";
+      });
   }
 });

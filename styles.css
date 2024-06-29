@@ -84,6 +84,12 @@ tr:hover {
   background-color: #ddd;
 }
 
+.loading {
+  text-align: center;
+  font-size: 18px;
+  color: #5eb8ce;
+}
+
 @media (max-width: 600px) {
   .card {
     width: 100%;

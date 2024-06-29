@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categoria de Votações</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Escolha a Categoria</h1>
+      <div class="cards">
+        <div class="card" onclick="navigateToRanking('projetos')">
+          <h2>Projetos</h2>
+          <p>Veja os melhores projetos em votação.</p>
+        </div>
+        <div class="card" onclick="navigateToRanking('expositores')">
+          <h2>Expositores</h2>
+          <p>Confira os expositores mais votados.</p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
